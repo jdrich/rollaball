@@ -6,6 +6,8 @@ public class player : MonoBehaviour {
     public float speed;
     public GameObject cameraObject;
 
+    public int score;
+
     protected Rigidbody rigid;
 
 	// Use this for initialization
@@ -28,6 +30,15 @@ public class player : MonoBehaviour {
             rigid.angularVelocity = Vector3.zero;
             rigid.velocity = Vector3.zero;
         }    
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("pickup")) {
+            Destroy(other.gameObject);
+
+            score += 1;
+        }
     }
 
     protected Vector3 Movement {  get {

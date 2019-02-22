@@ -7,7 +7,7 @@ public class pickup : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        this.tag = "pickup";		
 	}
 	
 	// Update is called once per frame
