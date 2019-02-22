@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class player : MonoBehaviour {
     public float speed;
     public GameObject cameraObject;
-
+    public Text scoreText;
     public int score;
 
     protected Rigidbody rigid;
@@ -13,6 +14,10 @@ public class player : MonoBehaviour {
 	// Use this for initialization
 	public void Start () {
         rigid = GetComponent<Rigidbody>();
+
+        score = 0;
+
+        updateScore(score);
 	}
 	
 	// Update is called once per frame
@@ -38,7 +43,14 @@ public class player : MonoBehaviour {
             Destroy(other.gameObject);
 
             score += 1;
+
+            updateScore(score);
         }
+    }
+
+    protected void updateScore(int score)
+    {
+        scoreText.text = "SCORE: " + score;
     }
 
     protected Vector3 Movement {  get {
