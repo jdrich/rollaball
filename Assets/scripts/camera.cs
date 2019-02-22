@@ -14,12 +14,12 @@ public class camera : MonoBehaviour
 	// Update is called once per frame
 	public void LateUpdate() 
     {
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.E))
         {
             transform.RotateAround(player.transform.position, Vector3.up, rotationSpeed * Time.deltaTime);
         }
 
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.Q))
         {
             transform.RotateAround(player.transform.position, Vector3.up, -rotationSpeed * Time.deltaTime);
         }
