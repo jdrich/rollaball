@@ -56,4 +56,10 @@ public class player : MonoBehaviour {
     protected Vector3 Movement {  get {
             return new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
     } }
+
+    public Vector3 Velocity {
+      get {
+            return rigid.velocity;
+      }
+    }
 }
