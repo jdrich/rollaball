@@ -5,15 +5,19 @@ using UnityEngine.UI;
 
 public class player : MonoBehaviour {
     public float speed;
+    public float jumpSpeed;
     public GameObject cameraObject;
     public Text scoreText;
     public int score;
 
+    protected Vector3 initialPosition;
     protected Rigidbody rigid;
 
 	// Use this for initialization
 	public void Start () {
         rigid = GetComponent<Rigidbody>();
+
+        initialPosition = transform.position;
 
         score = 0;
 
@@ -31,10 +35,14 @@ public class player : MonoBehaviour {
 
         rigid.AddForce(movement * speed);
 
-        if(Input.GetKey(KeyCode.Space)) {
-            rigid.angularVelocity = Vector3.zero;
-            rigid.velocity = Vector3.zero;
-        }    
+        if(Input.GetKey(KeyCode.Space) && Mathf.Abs(rigid.velocity.y) < 0.01) {
+            rigid.AddForce(new Vector3(0, jumpSpeed, 0));
+        }
+
+        if (Input.GetKey(KeyCode.R))
+        {
+            transform.position = initialPosition;
+        }
     }
 
     public void OnTriggerEnter(Collider other)

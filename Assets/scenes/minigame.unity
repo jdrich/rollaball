@@ -432,6 +432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  jumpSpeed: 300
   cameraObject: {fileID: 1844456845}
   scoreText: {fileID: 566851449}
   score: 0
