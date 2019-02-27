@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\scripts\camera.cs" />
+    <Compile Include="Assets\scripts\ground.cs" />
     <Compile Include="Assets\scripts\pickup.cs" />
     <Compile Include="Assets\scripts\pickups.cs" />
     <Compile Include="Assets\scripts\player.cs" />

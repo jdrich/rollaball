@@ -42,6 +42,8 @@ public class player : MonoBehaviour {
         if (Input.GetKey(KeyCode.R))
         {
             transform.position = initialPosition;
+            rigid.velocity = Vector3.zero;
+            rigid.angularVelocity = Vector3.zero;
         }
     }
 
